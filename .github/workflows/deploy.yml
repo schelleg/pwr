@@ -26,7 +26,8 @@ jobs:
         run: |
           mkdir content
           mkdir content/notebooks
-          cp README.md content 
+          cp 
+          cp README.md *.py *.proto content 
           cp -r sonora/* content
           cp -r pynqremote/* content
           jupyter lite build --contents content --output-dir dist
