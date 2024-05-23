@@ -21,13 +21,15 @@ jobs:
       - name: Install the dependencies
         run: |
           python -m pip install -r wasm_requirements.txt
+          
       - name: Build the JupyterLite site
         run: |
           mkdir content
           mkdir content/notebooks
-          cp README.md content 
-          cp resizer_notebooks.png content
-          cp -r pynq_helloworld/notebooks/edge/* content/notebooks
+          cp 
+          cp README.md *.py *.proto content 
+          cp -r sonora/* content
+          cp -r pynqremote/* content
           jupyter lite build --contents content --output-dir dist
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
